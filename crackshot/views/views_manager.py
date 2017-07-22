@@ -2,7 +2,8 @@
 
 import base_menu_bar
 import base_main_window
-import base_content_panel
+import base_shape_para_panel
+import base_flight_and_ref_panel
 
 
 class MainWindow(base_main_window.BaseMainWindow):
@@ -13,15 +14,25 @@ class MainWindow(base_main_window.BaseMainWindow):
 
 class MenuBar(base_menu_bar.BaseMenuBar):
     def set_para(self, event):
-        vm = ViewsManager()
-        vm.content_panel = vm.get_window("ContentPanel")
-        # vm.main_window.Refresh()
+        MenuBar.update_panel("ShapeParaPanel")
 
     def check_para(self, event):
-        print("check para")
+        MenuBar.update_panel("FlightAndRefPanel")
+
+    @staticmethod
+    def update_panel(new_panel_name):
+        vm = ViewsManager()
+        if vm.content_panel is not None:
+            vm.content_panel.Show(False)
+        vm.content_panel = vm.get_window(new_panel_name)
+        vm.content_panel.Show(True)
 
 
-class ContentPanel(base_content_panel.MyPanel5):
+class ShapeParaPanel(base_shape_para_panel.ShapeParaPanel):
+    pass
+
+
+class FlightAndRefPanel(base_flight_and_ref_panel.FlightAndRefPanel):
     pass
 
 
@@ -41,6 +52,7 @@ class ViewsManager(object):
     # Initial the main window and menubar
     def __init__(self):
         self.alive_windows = {}
+        self.content_panel = None
         self.main_window = self.get_window("MainWindow")
         self.menubar = self.get_window("MenuBar")
         self.main_window.SetMenuBar(self.menubar)
@@ -58,8 +70,10 @@ class ViewsManager(object):
             return MenuBar()
         if window_name == "MainWindow":
             return MainWindow(None)
-        if window_name == "ContentPanel":
-            return ContentPanel(self.main_window)
+        if window_name == "ShapeParaPanel":
+            return ShapeParaPanel(self.main_window)
+        if window_name == "FlightAndRefPanel":
+            return FlightAndRefPanel(self.main_window)
         else:
             return None
 

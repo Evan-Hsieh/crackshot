@@ -9,16 +9,17 @@
 
 import wx
 
-id_m_file_create_project = 1000
-id_file_open_project = 1001
-id_m_file_save_project = 1002
-id_m_para_set_para = 1003
-id_m_para_check_para = 1004
-id_m_cal_cal = 1005
-id_m_cal_draw = 1006
-id_m_help_guide = 1007
-id_m_about_version = 1008
-id_m_about_copyright = 1009
+id_BaseMenuBar = 1000
+id_m_file_create_project = 1001
+id_file_open_project = 1002
+id_m_file_save_project = 1003
+id_m_para_set_para = 1004
+id_m_para_check_para = 1005
+id_m_cal_cal = 1006
+id_m_cal_draw = 1007
+id_m_help_guide = 1008
+id_m_about_version = 1009
+id_m_about_copyright = 1010
 
 
 ###########################################################################

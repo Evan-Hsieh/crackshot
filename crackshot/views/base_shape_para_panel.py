@@ -9,21 +9,26 @@
 
 import wx
 
-id_BaseMainWindow = 1000
+id_ShapeParaPanel = 1000
 
 
 ###########################################################################
-## Class BaseMainWindow
+## Class ShapeParaPanel
 ###########################################################################
 
-class BaseMainWindow(wx.Frame):
+class ShapeParaPanel(wx.Panel):
     def __init__(self, parent):
-        wx.Frame.__init__(self, parent, id=id_BaseMainWindow, title=u"导弹专家系统", pos=wx.DefaultPosition,
-                          size=wx.Size(1000, 700), style=wx.DEFAULT_FRAME_STYLE | wx.TAB_TRAVERSAL)
+        wx.Panel.__init__(self, parent, id=id_ShapeParaPanel, pos=wx.DefaultPosition, size=wx.Size(500, 300),
+                          style=wx.TAB_TRAVERSAL)
 
-        self.SetSizeHintsSz(wx.DefaultSize, wx.DefaultSize)
+        bSizer4 = wx.BoxSizer(wx.VERTICAL)
 
-        self.Centre(wx.BOTH)
+        self.m_staticText1 = wx.StaticText(self, wx.ID_ANY, u"set para", wx.DefaultPosition, wx.DefaultSize, 0)
+        self.m_staticText1.Wrap(-1)
+        bSizer4.Add(self.m_staticText1, 0, wx.ALL, 5)
+
+        self.SetSizer(bSizer4)
+        self.Layout()
 
     def __del__(self):
         pass
