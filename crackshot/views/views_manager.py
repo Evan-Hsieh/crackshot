@@ -2,6 +2,7 @@
 
 import base_menu_bar
 import base_main_window
+import base_blank_panel
 import base_shape_para_panel
 import base_flight_and_ref_panel
 
@@ -17,7 +18,7 @@ class MenuBar(base_menu_bar.BaseMenuBar):
         MenuBar.update_panel("ShapeParaPanel")
 
     def check_para(self, event):
-        MenuBar.update_panel("FlightAndRefPanel")
+        MenuBar.update_panel("BlankPanel")
 
     @staticmethod
     def update_panel(new_panel_name):
@@ -70,6 +71,8 @@ class ViewsManager(object):
             return MenuBar()
         if window_name == "MainWindow":
             return MainWindow(None)
+        if window_name == "BlankPanel":
+            return base_blank_panel.BlankPanel(self.main_window)
         if window_name == "ShapeParaPanel":
             return ShapeParaPanel(self.main_window)
         if window_name == "FlightAndRefPanel":
