@@ -41,5 +41,18 @@ class BaseMissile(object):
         self.angle_front_edge = float(0)  # symbol: x0
         self.angle_rear_edge = float(0)  # symbol: x1
 
+        # The condition of flight
+        self.height_flight = float(0)  # symbol: Hf
+        self.mach_flight = float(0)  # symbol: Mf
+        self.angle_flight = float(0)  # symbol: Af
+        # type_pomian
+
+        # The reference
+        self.barycenter_ref = float(0)  # symbol: Br
+        self.length_ref = float(0)  # symbol: Lr
+        self.area_ref = float(0)  # symbol: Ar
+        # fs
+
+
 
 
