@@ -9,17 +9,16 @@
 
 import wx
 
-id_BaseMenuBar = 1000
-id_m_file_create_project = 1001
-id_file_open_project = 1002
-id_m_file_save_project = 1003
-id_m_para_set_para = 1004
-id_m_para_check_para = 1005
-id_m_cal_cal = 1006
-id_m_cal_draw = 1007
-id_m_help_guide = 1008
-id_m_about_version = 1009
-id_m_about_copyright = 1010
+id_m_file_create_project = 1000
+id_file_open_project = 1001
+id_m_file_save_project = 1002
+id_m_para_set_para = 1003
+id_m_para_check_para = 1004
+id_m_cal_cal = 1005
+id_m_cal_draw = 1006
+id_m_help_guide = 1007
+id_m_about_version = 1008
+id_m_about_copyright = 1009
 
 
 ###########################################################################
@@ -52,7 +51,7 @@ class BaseMenuBar(wx.MenuBar):
         self.m_para_check_para = wx.MenuItem(self.m_para, id_m_para_check_para, u"查看参数", wx.EmptyString, wx.ITEM_NORMAL)
         self.m_para.AppendItem(self.m_para_check_para)
 
-        self.Append(self.m_para, u"参数设置")
+        self.Append(self.m_para, u"建立模型")
 
         self.m_cal = wx.Menu()
         self.m_cal_cal = wx.MenuItem(self.m_cal, id_m_cal_cal, u"计算", wx.EmptyString, wx.ITEM_NORMAL)

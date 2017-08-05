@@ -3,7 +3,7 @@
 import base_main_window
 import base_menu_bar
 import base_blank_panel
-import base_shape_para_panel
+import base_set_para_panel
 import base_flight_and_ref_panel
 
 
@@ -13,7 +13,7 @@ class MainWindow(base_main_window.BaseMainWindow):
 
 class MenuBar(base_menu_bar.BaseMenuBar):
     def set_para(self, event):
-        MenuBar.update_panel("ShapeParaPanel")
+        MenuBar.update_panel("SetParaPanel")
 
     def check_para(self, event):
         MenuBar.update_panel("BlankPanel")
@@ -31,7 +31,7 @@ class BlankPanel(base_blank_panel.BlankPanel):
     pass
 
 
-class ShapeParaPanel(base_shape_para_panel.ShapeParaPanel):
+class SetParaPanel(base_set_para_panel.SetParaPanel):
     pass
 
 
