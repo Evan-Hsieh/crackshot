@@ -21,7 +21,7 @@ class SetParaPanel(wx.Panel):
 
         BodySizer = wx.BoxSizer(wx.VERTICAL)
 
-        self.m_notebook = wx.Notebook(self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.NB_TOP)
+        self.m_notebook = wx.Notebook(self, wx.ID_ANY, wx.DefaultPosition, wx.Size(-1, 620), wx.NB_TOP)
         self.m_notebook.SetFont(wx.Font(wx.NORMAL_FONT.GetPointSize(), 70, 90, 90, False, wx.EmptyString))
 
         self.body_para_panel = wx.Panel(self.m_notebook, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize,
@@ -54,11 +54,11 @@ class SetParaPanel(wx.Panel):
 
         self.m_textCtrl6 = wx.TextCtrl(self.body_para_panel, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
                                        wx.DefaultSize, 0)
-        bSizer4.Add(self.m_textCtrl6, 0, wx.ALIGN_CENTER | wx.LEFT, 5)
+        bSizer4.Add(self.m_textCtrl6, 0, wx.ALIGN_CENTER | wx.BOTTOM | wx.LEFT, 5)
 
         self.m_staticText7 = wx.StaticText(self.body_para_panel, wx.ID_ANY, u"米", wx.DefaultPosition, wx.DefaultSize, 0)
         self.m_staticText7.Wrap(-1)
-        bSizer4.Add(self.m_staticText7, 0, wx.ALIGN_CENTER, 5)
+        bSizer4.Add(self.m_staticText7, 0, wx.ALIGN_CENTER | wx.RIGHT, 5)
 
         sbSizer4.Add(bSizer4, 1, wx.EXPAND, 5)
 
@@ -71,15 +71,15 @@ class SetParaPanel(wx.Panel):
 
         self.m_textCtrl61 = wx.TextCtrl(self.body_para_panel, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
                                         wx.DefaultSize, 0)
-        bSizer3.Add(self.m_textCtrl61, 0, wx.ALIGN_CENTER | wx.LEFT, 5)
+        bSizer3.Add(self.m_textCtrl61, 0, wx.ALIGN_CENTER | wx.BOTTOM | wx.LEFT, 5)
 
         self.m_staticText6 = wx.StaticText(self.body_para_panel, wx.ID_ANY, u"米", wx.DefaultPosition, wx.DefaultSize, 0)
         self.m_staticText6.Wrap(-1)
-        bSizer3.Add(self.m_staticText6, 0, wx.ALIGN_CENTER, 5)
+        bSizer3.Add(self.m_staticText6, 0, wx.ALIGN_CENTER | wx.RIGHT, 5)
 
         sbSizer4.Add(bSizer3, 1, wx.EXPAND, 5)
 
-        gbSizer5.Add(sbSizer4, wx.GBPosition(0, 3), wx.GBSpan(3, 1), wx.ALL, 5)
+        gbSizer5.Add(sbSizer4, wx.GBPosition(3, 3), wx.GBSpan(3, 1), wx.ALL, 5)
 
         sbSizer14 = wx.StaticBoxSizer(wx.StaticBox(self.body_para_panel, wx.ID_ANY, u"圆柱段参数"), wx.VERTICAL)
 
@@ -118,7 +118,7 @@ class SetParaPanel(wx.Panel):
 
         sbSizer14.Add(bSizer6, 1, wx.EXPAND, 5)
 
-        gbSizer5.Add(sbSizer14, wx.GBPosition(0, 4), wx.GBSpan(2, 1), wx.ALL, 5)
+        gbSizer5.Add(sbSizer14, wx.GBPosition(3, 4), wx.GBSpan(2, 1), wx.ALL, 5)
 
         sbSizer3 = wx.StaticBoxSizer(wx.StaticBox(self.body_para_panel, wx.ID_ANY, u"收缩尾部参数"), wx.VERTICAL)
 
@@ -151,7 +151,7 @@ class SetParaPanel(wx.Panel):
 
         sbSizer3.Add(bSizer7, 1, wx.EXPAND, 5)
 
-        gbSizer5.Add(sbSizer3, wx.GBPosition(0, 5), wx.GBSpan(2, 1), wx.ALL, 5)
+        gbSizer5.Add(sbSizer3, wx.GBPosition(3, 5), wx.GBSpan(2, 1), wx.ALL, 5)
 
         sbSizer5 = wx.StaticBoxSizer(wx.StaticBox(self.body_para_panel, wx.ID_ANY, u"底部参数"), wx.VERTICAL)
 
@@ -191,9 +191,9 @@ class SetParaPanel(wx.Panel):
 
         sbSizer5.Add(bSizer12, 1, wx.EXPAND, 5)
 
-        gbSizer5.Add(sbSizer5, wx.GBPosition(0, 6), wx.GBSpan(2, 1), wx.ALL, 5)
+        gbSizer5.Add(sbSizer5, wx.GBPosition(3, 6), wx.GBSpan(2, 1), wx.ALL, 5)
 
-        bSizer5.Add(gbSizer5, 1, wx.ALL | wx.EXPAND, 20)
+        bSizer5.Add(gbSizer5, 1, wx.EXPAND | wx.LEFT | wx.RIGHT, 20)
 
         self.body_para_panel.SetSizer(bSizer5)
         self.body_para_panel.Layout()
@@ -265,7 +265,7 @@ class SetParaPanel(wx.Panel):
 
         sbSizer51.Add(bSizer15, 1, wx.EXPAND, 5)
 
-        gbSizer2.Add(sbSizer51, wx.GBPosition(0, 3), wx.GBSpan(4, 1), wx.ALL, 5)
+        gbSizer2.Add(sbSizer51, wx.GBPosition(3, 3), wx.GBSpan(4, 1), wx.ALL, 5)
 
         sbSizer7 = wx.StaticBoxSizer(wx.StaticBox(self.wings_para_panel, wx.ID_ANY, u"根弦参数"), wx.VERTICAL)
 
@@ -323,7 +323,7 @@ class SetParaPanel(wx.Panel):
 
         sbSizer7.Add(bSizer23, 1, wx.EXPAND, 5)
 
-        gbSizer2.Add(sbSizer7, wx.GBPosition(0, 4), wx.GBSpan(3, 1), wx.ALL, 5)
+        gbSizer2.Add(sbSizer7, wx.GBPosition(3, 4), wx.GBSpan(3, 1), wx.ALL, 5)
 
         sbSizer8 = wx.StaticBoxSizer(wx.StaticBox(self.wings_para_panel, wx.ID_ANY, u"梢弦参数"), wx.VERTICAL)
 
@@ -381,7 +381,7 @@ class SetParaPanel(wx.Panel):
 
         sbSizer8.Add(bSizer26, 1, wx.EXPAND, 5)
 
-        gbSizer2.Add(sbSizer8, wx.GBPosition(0, 5), wx.GBSpan(1, 1), wx.ALL, 5)
+        gbSizer2.Add(sbSizer8, wx.GBPosition(3, 5), wx.GBSpan(1, 1), wx.ALL, 5)
 
         sbSizer9 = wx.StaticBoxSizer(wx.StaticBox(self.wings_para_panel, wx.ID_ANY, u"其他参数"), wx.VERTICAL)
 
@@ -453,9 +453,9 @@ class SetParaPanel(wx.Panel):
 
         sbSizer9.Add(gbSizer3, 1, wx.EXPAND, 5)
 
-        gbSizer2.Add(sbSizer9, wx.GBPosition(0, 6), wx.GBSpan(1, 1), wx.ALL, 5)
+        gbSizer2.Add(sbSizer9, wx.GBPosition(3, 6), wx.GBSpan(1, 1), wx.ALL, 5)
 
-        bSizer13.Add(gbSizer2, 1, wx.EXPAND | wx.TOP, 20)
+        bSizer13.Add(gbSizer2, 1, wx.EXPAND | wx.LEFT | wx.RIGHT, 20)
 
         self.wings_para_panel.SetSizer(bSizer13)
         self.wings_para_panel.Layout()
@@ -463,11 +463,184 @@ class SetParaPanel(wx.Panel):
         self.m_notebook.AddPage(self.wings_para_panel, u"弹翼参数", False)
         self.flight_condition_panel = wx.Panel(self.m_notebook, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize,
                                                wx.TAB_TRAVERSAL)
+        bSizer33 = wx.BoxSizer(wx.VERTICAL)
+
+        gbSizer4 = wx.GridBagSizer(0, 20)
+        gbSizer4.SetFlexibleDirection(wx.BOTH)
+        gbSizer4.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED)
+
+        sbSizer12 = wx.StaticBoxSizer(wx.StaticBox(self.flight_condition_panel, wx.ID_ANY, u"飞行条件"), wx.VERTICAL)
+
+        gbSizer51 = wx.GridBagSizer(0, 0)
+        gbSizer51.SetFlexibleDirection(wx.BOTH)
+        gbSizer51.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED)
+
+        self.m_staticText71 = wx.StaticText(self.flight_condition_panel, wx.ID_ANY, u"飞行高度（海拔）", wx.DefaultPosition,
+                                            wx.DefaultSize, 0)
+        self.m_staticText71.Wrap(-1)
+        gbSizer51.Add(self.m_staticText71, wx.GBPosition(0, 0), wx.GBSpan(1, 1), wx.ALL, 5)
+
+        self.m_staticText72 = wx.StaticText(self.flight_condition_panel, wx.ID_ANY, u"飞行马赫数", wx.DefaultPosition,
+                                            wx.DefaultSize, 0)
+        self.m_staticText72.Wrap(-1)
+        gbSizer51.Add(self.m_staticText72, wx.GBPosition(2, 0), wx.GBSpan(1, 1), wx.ALL, 5)
+
+        self.m_staticText73 = wx.StaticText(self.flight_condition_panel, wx.ID_ANY, u"攻角", wx.DefaultPosition,
+                                            wx.DefaultSize, 0)
+        self.m_staticText73.Wrap(-1)
+        gbSizer51.Add(self.m_staticText73, wx.GBPosition(4, 0), wx.GBSpan(1, 1), wx.ALL, 5)
+
+        self.m_textCtrl45 = wx.TextCtrl(self.flight_condition_panel, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+                                        wx.DefaultSize, 0)
+        gbSizer51.Add(self.m_textCtrl45, wx.GBPosition(0, 1), wx.GBSpan(1, 1), 0, 5)
+
+        self.m_staticText74 = wx.StaticText(self.flight_condition_panel, wx.ID_ANY, u"米", wx.DefaultPosition,
+                                            wx.DefaultSize, 0)
+        self.m_staticText74.Wrap(-1)
+        gbSizer51.Add(self.m_staticText74, wx.GBPosition(0, 2), wx.GBSpan(1, 1), wx.ALIGN_CENTER_VERTICAL, 5)
+
+        self.m_textCtrl46 = wx.TextCtrl(self.flight_condition_panel, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+                                        wx.DefaultSize, 0)
+        gbSizer51.Add(self.m_textCtrl46, wx.GBPosition(2, 1), wx.GBSpan(1, 1), 0, 5)
+
+        self.m_staticText75 = wx.StaticText(self.flight_condition_panel, wx.ID_ANY, u"马赫", wx.DefaultPosition,
+                                            wx.DefaultSize, 0)
+        self.m_staticText75.Wrap(-1)
+        gbSizer51.Add(self.m_staticText75, wx.GBPosition(2, 2), wx.GBSpan(1, 1), wx.ALIGN_CENTER_VERTICAL, 5)
+
+        gbSizer51.AddSpacer((0, 20), wx.GBPosition(3, 1), wx.GBSpan(1, 1), wx.EXPAND, 5)
+
+        self.m_textCtrl47 = wx.TextCtrl(self.flight_condition_panel, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+                                        wx.DefaultSize, 0)
+        gbSizer51.Add(self.m_textCtrl47, wx.GBPosition(4, 1), wx.GBSpan(1, 1), 0, 5)
+
+        self.m_staticText76 = wx.StaticText(self.flight_condition_panel, wx.ID_ANY, u"度", wx.DefaultPosition,
+                                            wx.DefaultSize, 0)
+        self.m_staticText76.Wrap(-1)
+        gbSizer51.Add(self.m_staticText76, wx.GBPosition(4, 2), wx.GBSpan(1, 1), wx.ALIGN_CENTER_VERTICAL, 5)
+
+        self.m_staticText78 = wx.StaticText(self.flight_condition_panel, wx.ID_ANY, u"备注：默认值为0海拔", wx.DefaultPosition,
+                                            wx.DefaultSize, 0)
+        self.m_staticText78.Wrap(-1)
+        self.m_staticText78.SetFont(wx.Font(10, 70, 90, 90, False, wx.EmptyString))
+
+        gbSizer51.Add(self.m_staticText78, wx.GBPosition(1, 1), wx.GBSpan(1, 2), wx.BOTTOM, 10)
+
+        self.m_staticText77 = wx.StaticText(self.flight_condition_panel, wx.ID_ANY, u"备注：多个输入数据以英文逗号作为分隔",
+                                            wx.DefaultPosition, wx.Size(-1, -1), 0)
+        self.m_staticText77.Wrap(-1)
+        self.m_staticText77.SetFont(wx.Font(10, 70, 90, 90, False, wx.EmptyString))
+
+        gbSizer51.Add(self.m_staticText77, wx.GBPosition(5, 1), wx.GBSpan(1, 2), wx.BOTTOM, 5)
+
+        sbSizer12.Add(gbSizer51, 1, wx.ALL, 20)
+
+        gbSizer4.Add(sbSizer12, wx.GBPosition(3, 3), wx.GBSpan(1, 1), wx.EXPAND, 5)
+
+        bSizer33.Add(gbSizer4, 1, wx.EXPAND | wx.LEFT | wx.RIGHT, 20)
+
+        self.flight_condition_panel.SetSizer(bSizer33)
+        self.flight_condition_panel.Layout()
+        bSizer33.Fit(self.flight_condition_panel)
         self.m_notebook.AddPage(self.flight_condition_panel, u"飞行条件", False)
         self.ref_para_panel = wx.Panel(self.m_notebook, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL)
+        bSizer37 = wx.BoxSizer(wx.VERTICAL)
+
+        gbSizer6 = wx.GridBagSizer(0, 20)
+        gbSizer6.SetFlexibleDirection(wx.BOTH)
+        gbSizer6.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED)
+
+        sbSizer13 = wx.StaticBoxSizer(wx.StaticBox(self.ref_para_panel, wx.ID_ANY, u"参考值"), wx.VERTICAL)
+
+        gbSizer7 = wx.GridBagSizer(0, 0)
+        gbSizer7.SetFlexibleDirection(wx.BOTH)
+        gbSizer7.SetNonFlexibleGrowMode(wx.FLEX_GROWMODE_SPECIFIED)
+
+        self.m_staticText79 = wx.StaticText(self.ref_para_panel, wx.ID_ANY, u"质心", wx.DefaultPosition, wx.DefaultSize,
+                                            0)
+        self.m_staticText79.Wrap(-1)
+        gbSizer7.Add(self.m_staticText79, wx.GBPosition(0, 0), wx.GBSpan(1, 1), wx.ALIGN_CENTER | wx.ALL, 5)
+
+        self.m_textCtrl48 = wx.TextCtrl(self.ref_para_panel, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+                                        wx.DefaultSize, 0)
+        gbSizer7.Add(self.m_textCtrl48, wx.GBPosition(0, 1), wx.GBSpan(1, 1), wx.ALL, 5)
+
+        self.m_staticText80 = wx.StaticText(self.ref_para_panel, wx.ID_ANY, u"米", wx.DefaultPosition, wx.DefaultSize, 0)
+        self.m_staticText80.Wrap(-1)
+        gbSizer7.Add(self.m_staticText80, wx.GBPosition(0, 2), wx.GBSpan(1, 1), wx.ALIGN_CENTER_VERTICAL, 5)
+
+        self.m_staticText85 = wx.StaticText(self.ref_para_panel, wx.ID_ANY, u"参考长度", wx.DefaultPosition, wx.DefaultSize,
+                                            0)
+        self.m_staticText85.Wrap(-1)
+        gbSizer7.Add(self.m_staticText85, wx.GBPosition(1, 0), wx.GBSpan(1, 1), wx.ALIGN_CENTER | wx.ALL, 5)
+
+        self.m_textCtrl50 = wx.TextCtrl(self.ref_para_panel, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+                                        wx.DefaultSize, 0)
+        gbSizer7.Add(self.m_textCtrl50, wx.GBPosition(1, 1), wx.GBSpan(1, 1), wx.ALL, 5)
+
+        self.m_staticText86 = wx.StaticText(self.ref_para_panel, wx.ID_ANY, u"米", wx.DefaultPosition, wx.DefaultSize, 0)
+        self.m_staticText86.Wrap(-1)
+        gbSizer7.Add(self.m_staticText86, wx.GBPosition(1, 2), wx.GBSpan(1, 1), wx.ALIGN_CENTER_VERTICAL, 5)
+
+        self.m_staticText88 = wx.StaticText(self.ref_para_panel, wx.ID_ANY, u"参考面积", wx.DefaultPosition, wx.DefaultSize,
+                                            0)
+        self.m_staticText88.Wrap(-1)
+        gbSizer7.Add(self.m_staticText88, wx.GBPosition(2, 0), wx.GBSpan(1, 1), wx.ALIGN_CENTER | wx.ALL, 5)
+
+        self.m_textCtrl51 = wx.TextCtrl(self.ref_para_panel, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+                                        wx.DefaultSize, 0)
+        gbSizer7.Add(self.m_textCtrl51, wx.GBPosition(2, 1), wx.GBSpan(1, 1), wx.ALL, 5)
+
+        self.m_staticText89 = wx.StaticText(self.ref_para_panel, wx.ID_ANY, u"平方米", wx.DefaultPosition, wx.DefaultSize,
+                                            0)
+        self.m_staticText89.Wrap(-1)
+        gbSizer7.Add(self.m_staticText89, wx.GBPosition(2, 2), wx.GBSpan(1, 1), wx.ALIGN_CENTER_VERTICAL, 5)
+
+        self.m_staticText90 = wx.StaticText(self.ref_para_panel, wx.ID_ANY, u"fs", wx.DefaultPosition, wx.DefaultSize,
+                                            0)
+        self.m_staticText90.Wrap(-1)
+        gbSizer7.Add(self.m_staticText90, wx.GBPosition(3, 0), wx.GBSpan(1, 1), wx.ALIGN_CENTER | wx.ALL, 5)
+
+        self.m_textCtrl52 = wx.TextCtrl(self.ref_para_panel, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+                                        wx.DefaultSize, 0)
+        gbSizer7.Add(self.m_textCtrl52, wx.GBPosition(3, 1), wx.GBSpan(1, 1), wx.ALL, 5)
+
+        self.m_staticText91 = wx.StaticText(self.ref_para_panel, wx.ID_ANY, u"备注：作为非线性升力计算参数", wx.DefaultPosition,
+                                            wx.DefaultSize, 0)
+        self.m_staticText91.Wrap(-1)
+        self.m_staticText91.SetFont(wx.Font(10, 70, 90, 90, False, wx.EmptyString))
+
+        gbSizer7.Add(self.m_staticText91, wx.GBPosition(4, 1), wx.GBSpan(1, 2), wx.ALIGN_CENTER_VERTICAL, 5)
+
+        sbSizer13.Add(gbSizer7, 1, wx.EXPAND, 5)
+
+        gbSizer6.Add(sbSizer13, wx.GBPosition(3, 3), wx.GBSpan(1, 1), wx.EXPAND, 5)
+
+        bSizer37.Add(gbSizer6, 1, wx.EXPAND | wx.LEFT | wx.RIGHT, 20)
+
+        self.ref_para_panel.SetSizer(bSizer37)
+        self.ref_para_panel.Layout()
+        bSizer37.Fit(self.ref_para_panel)
         self.m_notebook.AddPage(self.ref_para_panel, u"参考值", False)
 
         BodySizer.Add(self.m_notebook, 1, wx.ALL | wx.EXPAND, 5)
+
+        bSizer42 = wx.BoxSizer(wx.VERTICAL)
+
+        bSizer43 = wx.BoxSizer(wx.HORIZONTAL)
+
+        self.m_button18 = wx.Button(self, wx.ID_ANY, u"上一步", wx.DefaultPosition, wx.DefaultSize, 0)
+        bSizer43.Add(self.m_button18, 0, wx.ALL, 5)
+
+        self.m_button19 = wx.Button(self, wx.ID_ANY, u"下一步", wx.DefaultPosition, wx.DefaultSize, 0)
+        bSizer43.Add(self.m_button19, 0, wx.ALL, 5)
+
+        self.m_button20 = wx.Button(self, wx.ID_ANY, u"完成", wx.DefaultPosition, wx.DefaultSize, 0)
+        bSizer43.Add(self.m_button20, 0, wx.ALL, 5)
+
+        bSizer42.Add(bSizer43, 1, wx.ALIGN_RIGHT | wx.RIGHT, 10)
+
+        BodySizer.Add(bSizer42, 1, wx.EXPAND, 5)
 
         self.SetSizer(BodySizer)
         self.Layout()
