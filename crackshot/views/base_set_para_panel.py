@@ -52,9 +52,9 @@ class SetParaPanel(wx.Panel):
 
         bSizer4 = wx.BoxSizer(wx.HORIZONTAL)
 
-        self.m_textCtrl6 = wx.TextCtrl(self.body_para_panel, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
-                                       wx.DefaultSize, 0)
-        bSizer4.Add(self.m_textCtrl6, 0, wx.ALIGN_CENTER | wx.BOTTOM | wx.LEFT, 5)
+        self.text_length_warhead = wx.TextCtrl(self.body_para_panel, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+                                               wx.DefaultSize, 0)
+        bSizer4.Add(self.text_length_warhead, 0, wx.ALIGN_CENTER | wx.BOTTOM | wx.LEFT, 5)
 
         self.m_staticText7 = wx.StaticText(self.body_para_panel, wx.ID_ANY, u"米", wx.DefaultPosition, wx.DefaultSize, 0)
         self.m_staticText7.Wrap(-1)
@@ -490,7 +490,7 @@ class SetParaPanel(wx.Panel):
         self.m_staticText73.Wrap(-1)
         gbSizer51.Add(self.m_staticText73, wx.GBPosition(4, 0), wx.GBSpan(1, 1), wx.ALL, 5)
 
-        self.m_textCtrl45 = wx.TextCtrl(self.flight_condition_panel, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition,
+        self.m_textCtrl45 = wx.TextCtrl(self.flight_condition_panel, wx.ID_ANY, u"0", wx.DefaultPosition,
                                         wx.DefaultSize, 0)
         gbSizer51.Add(self.m_textCtrl45, wx.GBPosition(0, 1), wx.GBSpan(1, 1), 0, 5)
 
@@ -645,7 +645,41 @@ class SetParaPanel(wx.Panel):
         self.SetSizer(BodySizer)
         self.Layout()
 
+        # Connect Events
+        self.text_length_warhead.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl61.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl7.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl8.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl9.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl11.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl91.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl10.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl12.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl15.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl21.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl22.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl23.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl24.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl25.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl26.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl40.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl45.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl46.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl47.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl48.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl50.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl51.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_textCtrl52.Bind(wx.EVT_KILL_FOCUS, self.onkillfocus_validate_input_num)
+        self.m_button20.Bind(wx.EVT_BUTTON, self.onclick_finish_set_para)
+
     def __del__(self):
         pass
+
+    # Virtual event handlers, overide them in your derived class
+    def onkillfocus_validate_input_num(self, event):
+        event.Skip()
+
+    def onclick_finish_set_para(self, event):
+        event.Skip()
 
 

@@ -4,7 +4,7 @@ import base_main_window
 import base_menu_bar
 import base_blank_panel
 import base_set_para_panel
-import base_flight_and_ref_panel
+import re
 
 
 class MainWindow(base_main_window.BaseMainWindow):
@@ -32,11 +32,33 @@ class BlankPanel(base_blank_panel.BlankPanel):
 
 
 class SetParaPanel(base_set_para_panel.SetParaPanel):
-    pass
+    def onclick_finish_set_para(self, event):
+        print("*****")
+        t = self.text_length_warhead
+        v = t.GetValue()
+        print(self.text_length_warhead.GetValue())
+
+    def onchar_validate_input_num(self, event):
+        value = event.GetKeyCode()
+        print(value)
+        if is_digits_by_ascii(value) is True:
+            event.Skip()
+
+    # Clear the textCtrl if the input is not number when lose focus
+    def onkillfocus_validate_input_num(self, event):
+        obj = event.GetEventObject()
+        pattern = re.compile(r'^[-+]?[0-9]+\.?[0-9]*$')
+        if pattern.match(obj.GetValue()):
+            event.Skip
+        else:
+            obj.Clear()
 
 
-class FlightAndRefPanel(base_flight_and_ref_panel.FlightAndRefPanel):
-    pass
+# Judge if the char is not digits
+def is_digits_by_ascii(value):
+    if 48 <= value <= 57 or 45 <= value <= 46:
+        return True
+    return False
 
 
 # The decorator of singleton class
