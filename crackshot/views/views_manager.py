@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import wx
 import base_main_window
 import base_menu_bar
 import base_blank_panel
@@ -47,10 +48,12 @@ class SetParaPanel(base_set_para_panel.SetParaPanel):
     # Clear the textCtrl if the input is not number when lose focus
     def onkillfocus_validate_input_num(self, event):
         obj = event.GetEventObject()
-        pattern = re.compile(r'^[-+]?[0-9]+\.?[0-9]*$')
+        pattern = re.compile(r'^([-]?[0-9]+)?\.?[0-9]*$')
         if pattern.match(obj.GetValue()):
             event.Skip
         else:
+            vm = ViewsManager()
+            vm.show_message_dialog(u"消息提示", u"输入数据需要为数字，且不能含有任何中文符号！")
             obj.Clear()
 
 
@@ -98,4 +101,9 @@ class ViewsManager(object):
         else:
             obj = eval(window_name + "(self.main_window)")
             return obj
+
+    # Show message dialog
+    def show_message_dialog(self, title, msg):
+        wx.MessageBox(msg, title)
+
 
