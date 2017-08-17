@@ -16,43 +16,35 @@ class SternTypeEnum(object):
 
 class BaseMissile(object):
     def __init__(self):
-        # The parameter of missile body
-        self.type_warhead = WarheadTypeEnum.UNDEFINED  # Warhead type, symbol: Tn
-        self.length_warhead = float(0)  # symbol: Ln
-        self.diameter_warhead = float(0)  # symbol: Dn
-        self.diameter_column = float(0)  # symbol: Dc
-        self.length_column = float(0)  # symbol: Lc
-        self.type_stern = SternTypeEnum.UNDEFINED  # symbol: Tt
-        self.length_stern = float(0)  # symbol: Lt
-        self.diameter_tail = float(0)  # symbol: Dt
-        self.diameter_nozzle = float(0)  # symbol: Dbt
-
-        # The parameter of missile wing
-        self.num_group_wings = 0   # symbol: Ngw
-        self.pos_wings = float(0)  # symbol: Pw
-        self.num_wings_per_group = float(0)  # symbol: Nwpg
-        self.layout_angle_wings = float(0)  # symbol: Law
-        self.root_chord = float(0)  # symbol: b0
-        self.tip_chord = float(0)  # symbol: b1
-        self.distance_root_chord = float(0)  # symbol: h0
-        self.distance_tip_chord = float(0)  # symbol: h1
-        self.thickness_root_chord = float(0)  # symbol: c0
-        self.thickness_tip_chord = float(0)  # symbol: c1
-        self.angle_front_edge = float(0)  # symbol: x0
-        self.angle_rear_edge = float(0)  # symbol: x1
-
-        # The condition of flight
-        self.height_flight = float(0)  # symbol: Hf
-        self.mach_flight = float(0)  # symbol: Mf
-        self.angle_flight = float(0)  # symbol: Af
-        # type_pomian
-
-        # The reference
-        self.barycenter_ref = float(0)  # symbol: Br
-        self.length_ref = float(0)  # symbol: Lr
-        self.area_ref = float(0)  # symbol: Ar
+        self.para_dict = {'type_warhead': WarheadTypeEnum.UNDEFINED,  # missile body
+                          'length_warhead': float(0),
+                          'diameter_warhead': float(0),
+                          'diameter_column': float(0),
+                          'length_column': float(0),
+                          'type_stern': SternTypeEnum.UNDEFINED,
+                          'length_stern': float(0),
+                          'diameter_tail': float(0),
+                          'diameter_nozzle': float(0),
+                          'num_group_wings': 0,  # missile wing
+                          'pos_wings': float(0),
+                          'num_wings_per_group': float(0),
+                          'layout_angle_wings': float(0),
+                          'root_chord': float(0),
+                          'tip_chord': float(0),
+                          'distance_root_chord': float(0),
+                          'distance_tip_chord': float(0),
+                          'thickness_root_chord': float(0),
+                          'thickness_tip_chord': float(0),
+                          'angle_front_edge': float(0),
+                          'angle_rear_edge': float(0),
+                          'height_flight': float(0),  # condition of flight
+                          'mach_flight': float(0),
+                          'angle_flight': float(0),
+                          'barycenter_ref': float(0),  # reference
+                          'length_ref': float(0),
+                          'area_ref': float(0)}
         # fs
 
 
-
-
+if __name__ == "__main__":
+    pass
