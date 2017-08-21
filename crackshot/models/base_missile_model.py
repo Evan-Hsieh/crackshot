@@ -43,7 +43,7 @@ class BaseMissile(object):
                           'barycenter_ref': float(0),  # reference
                           'length_ref': float(0),
                           'area_ref': float(0)}
-        # fs
+        # fsw
 
 
 if __name__ == "__main__":
