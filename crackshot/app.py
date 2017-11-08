@@ -17,6 +17,7 @@ class MainApp(wx.App):
 
 if __name__ == "__main__":
     app = MainApp()
+    # Loop
     app.MainLoop()
 
 
